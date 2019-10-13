@@ -25,9 +25,11 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'd!bo4+!n=!2+xb*dn47e*!b@0((oovpi-2+xkzja9kfp(u63sf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,10 +87,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dailyfresh_test',
+        # 'NAME': 'dailyfresh',
         'USER': 'root',
         'PASSWORD': '123',
-        'HOST': '192.168.160.130',
-        # 'HOST': 'localhost',
+        # 'HOST': '192.168.160.130',
+        'HOST': 'localhost',
         'PORT': 3306,
     }
 }
@@ -134,6 +137,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# 指定收集静态文件的路径
+STATIC_ROOT = '/var/www/dailyfresh/static'
 
 
 # 富文本编辑器配置
@@ -160,8 +165,8 @@ EMAIL_FROM = '天天生鲜<13697484271@163.com>'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        # "LOCATION": "redis://127.0.0.1:6379/1",
-        "LOCATION": "redis://192.168.160.130:6379/1",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        # "LOCATION": "redis://192.168.160.130:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

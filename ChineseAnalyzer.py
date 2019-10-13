@@ -1,6 +1,7 @@
 import jieba
 from whoosh.analysis import Tokenizer, Token
 
+
 class ChineseTokenizer(Tokenizer):
     def __call__(self, value, positions=False, chars=False,
                  keeporiginal=False, removestops=True,
