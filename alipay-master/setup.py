@@ -36,6 +36,6 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    install_requires=["pycryptodomex==3.7.2"],
+    install_requires=["pycryptodomex==3.19.1"],
     test_suite="setup.alipay_test_suite"
 )
